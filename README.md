@@ -4,7 +4,8 @@
 
 java -jar decompileapk.jar xx.apk
 
-output: jar、xml、res
+it can output dex,jar,xml,AndroidManifest.xml,res and sign info.
+
 -----
 
 Blog:http://blog.csdn.net/masonblog
