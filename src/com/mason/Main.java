@@ -27,7 +27,7 @@ public class Main {
 		String projectDir = System.getProperty("user.dir");
 		String mylibsDir = projectDir+"/mylibs";
 		/*******************************************/
-//		String apkPath = "/Users/liumeng/AndroidStudioProjects/eclipse_workspace2/BatchPackApk/output/eleme-eleme4_3_1.apk";
+//		String apkPath = "/Users/liumeng/Documents/MySDK/decompileapk/aa.apk";
 //		String outPath = projectDir+"/output";
 //		boolean isLog = false;
 		MyJCommander jct = new MyJCommander(args);
@@ -45,9 +45,13 @@ public class Main {
 			myRuntime.isLog = isLog;
 			myRuntime.changeDir(mylibsDir+"/");
 			//反编译res中的全部xml文件
-			//myRuntime.exec("java -jar apktool_2.0.0.3.jar d -f tem.apk -o apk");
+			myRuntime.exec("java -jar apktool_2.0.0.3.jar d -f "+outPath+"/tem.apk"+" -o "+outPath+"/apk");
+			//把smali拷贝到apkunzip
+			FileUtil.copyDirectiory(outPath+"/apk/smali", outPath+"/apkunzip/smali");
 			//把apktool反编译的smali转成dex
 			//myRuntime.exec("java -jar smali-2.0.3.jar apk/smali -o apk/classes.dex");
+			//删除apk文件夹
+			FileUtil.delete(new File(outPath+"/apk"));
 			
 			//apk直接转成jar
 			if(MyRuntime.isWindowsOS()){
