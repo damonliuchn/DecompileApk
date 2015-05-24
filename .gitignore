@@ -28,3 +28,5 @@ Thumbs.db
 
 # Log Files
 *.log
+
+/output

@@ -6,6 +6,9 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 
+import org.apache.http.auth.AUTH;
+import org.json.JSONArray;
+
 import com.beust.jcommander.JCommander;
 import com.mason.library.FileUtil;
 import com.mason.library.MyRuntime;
@@ -27,7 +30,7 @@ public class Main {
 		String projectDir = System.getProperty("user.dir");
 		String mylibsDir = projectDir+"/mylibs";
 		/*******************************************/
-//		String apkPath = "/Users/liumeng/Documents/MySDK/decompileapk/aa.apk";
+//		String apkPath = "/Users/liumeng/Documents/MySDK/decompileapk/a.apk";
 //		String outPath = projectDir+"/output";
 //		boolean isLog = false;
 		MyJCommander jct = new MyJCommander(args);
@@ -44,10 +47,13 @@ public class Main {
 			MyRuntime myRuntime = MyRuntime.getMyRuntime();
 			myRuntime.isLog = isLog;
 			myRuntime.changeDir(mylibsDir+"/");
-			//反编译res中的全部xml文件
+			//使用apktool反编译可以得到smali和反编译后的xml
 			myRuntime.exec("java -jar apktool_2.0.0.3.jar d -f "+outPath+"/tem.apk"+" -o "+outPath+"/apk");
-			//把smali拷贝到apkunzip
+			//把smali和manifest拷贝到apkunzip
 			FileUtil.copyDirectiory(outPath+"/apk/smali", outPath+"/apkunzip/smali");
+			FileUtil.copyFile(new File(outPath+"/apk/AndroidManifest.xml") , new File(outPath+"/apkunzip/AndroidManifest-apktool.xml") );
+			//把res拷贝到apkunzip
+			FileUtil.copyDirectiory(outPath+"/apk/res", outPath+"/apkunzip/res-apktool");
 			//把apktool反编译的smali转成dex
 			//myRuntime.exec("java -jar smali-2.0.3.jar apk/smali -o apk/classes.dex");
 			//删除apk文件夹
@@ -67,6 +73,8 @@ public class Main {
 			String trueAndroidManifest = myRuntime.exec("java -jar AXMLPrinter2.jar "+outPath+"/apkunzip/AndroidManifest.xml");
 			FileUtil.delete(new File(outPath+"/apkunzip/AndroidManifest.xml"));
 			StringUtil.string2File(trueAndroidManifest, outPath+"/apkunzip/AndroidManifest.xml");
+			//删除res
+			FileUtil.delete(new File(outPath+"/apkunzip/res"));
 			//查看结果
 			Result.handleResult(new String[]{outPath+"/apkunzip/AndroidManifest.xml",outPath+"/signlog.txt"});
 			//调用jd-ui
