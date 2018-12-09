@@ -2,7 +2,7 @@
 
 ###Feature 1
 
-it can output dex , jar , smali , xml , AndroidManifest.xml , res , sign info , umeng channel.
+it can output dex , jar , smali , xml , AndroidManifest.xml , res , sign info .
 ```java
 java -jar decompileapk.jar xx.apk
 ```

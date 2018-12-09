@@ -1,32 +1,8 @@
-/.idea
-/.gradle
-/local.properties
-/build
-/app/build
-
 *.iml
-
-# Eclipse project files
-.classpath
-.project
-/.settings
-.fatjar
-/bin
-
-# OSX files
+.gradle
+local.properties
+.idea
 .DS_Store
-.DS_Store?
-
-# Windows thumbnail db
-ehthumbs.db
-Thumbs.db
-
-# OS-specific files
-._*
-.Spotlight-V100
-.Trashes
-
-# Log Files
-*.log
-
-/output
+build
+local
+decompile*
