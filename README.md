@@ -4,7 +4,7 @@ download decompileapk.zip and unzip
 
 ### Feature 1
 
-it can output dex , jar , smali , xml , AndroidManifest.xml , res , sign info .
+it can output dex,jar,smali,xml,AndroidManifest.xml,res,sign,version,packageName.
 ```java
 java -jar decompileapk.jar xx.apk
 ```
