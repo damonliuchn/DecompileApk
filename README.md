@@ -10,7 +10,7 @@ java -jar decompileapk.jar xx.apk
 ```
 <img src="https://raw.githubusercontent.com/MasonLiuChn/DecompileApk/master/app/doc/1.png" width="50%" height="50%" />
 
-<img src="https://raw.githubusercontent.com/MasonLiuChn/DecompileApk/master/app/doc/2.png" width="80%" height="80%" />
+<img src="https://raw.githubusercontent.com/MasonLiuChn/DecompileApk/master/app/doc/2.png" width="20%" height="20%" />
 
 ### Feature 2
 recreate apk.
