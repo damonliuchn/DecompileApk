@@ -1,8 +1,9 @@
-*.iml
+.iml
 .gradle
-local.properties
 .idea
 .DS_Store
 build
 local
-decompile*
+local.properties
+commit.js
+commit.sh
