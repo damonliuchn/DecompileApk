@@ -7,3 +7,4 @@ local
 local.properties
 commit.js
 commit.sh
+decompile_*

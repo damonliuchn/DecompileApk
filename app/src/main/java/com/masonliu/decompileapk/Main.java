@@ -71,7 +71,7 @@ public class Main {
     }
 
     public static void decompileApk(MyRuntime myRuntime, String apkPath, String outPath) {
-        outPath = outPath + "/decompile" + System.currentTimeMillis();
+        outPath = outPath + "/decompile_" + System.currentTimeMillis();
         try {
             FileUtil.copy(apkPath, outPath + "/tem.apk");
             //使用apktool反编译可以得到smali和反编译后的xml

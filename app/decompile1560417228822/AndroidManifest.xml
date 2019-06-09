@@ -1,6 +1,0 @@
-java.io.FileNotFoundException: D:\Project\AS_MY\DecompileApk\app\decompile1560417228822\apkunzip\AndroidManifest.xml (系统找不到指定的路径。)
-	at java.io.FileInputStream.open0(Native Method)
-	at java.io.FileInputStream.open(FileInputStream.java:195)
-	at java.io.FileInputStream.<init>(FileInputStream.java:138)
-	at java.io.FileInputStream.<init>(FileInputStream.java:93)
-	at diff.rednaga.AXMLPrinter.main(AXMLPrinter.java:71)

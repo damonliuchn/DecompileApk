@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <EditText android:textSize="18.0sp" android:id="@id/zidianEditText" android:scrollbars="vertical" android:layout_width="fill_parent" android:layout_height="0.0dip" android:hint="每行1个密码，密码长度不得小于8位" android:minLines="10" android:singleLine="false" android:autoText="false" android:layout_weight="1.0" />
-    <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
-        <Button android:textSize="21.0sp" android:id="@id/savebbtn" android:layout_width="0.0dip" android:layout_height="50.0dip" android:text="保存字典" android:layout_weight="1.0" />
-        <Button android:textSize="21.0sp" android:id="@id/refushbbtn" android:layout_width="0.0dip" android:layout_height="50.0dip" android:text="恢复默认" android:layout_weight="1.0" />
-    </LinearLayout>
-</LinearLayout>

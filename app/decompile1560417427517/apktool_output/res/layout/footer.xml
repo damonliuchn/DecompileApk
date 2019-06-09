@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:id="@id/footlayout" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <TextView android:textSize="18.0sp" android:gravity="center_horizontal" android:id="@id/textView1" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="看帮助请猛戳这里╰(￣▽￣)╮" android:layout_alignParentBottom="true" />
-</RelativeLayout>
