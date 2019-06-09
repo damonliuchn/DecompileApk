@@ -21,25 +21,30 @@ import java.io.File;
 public class Main {
 
     public static void main(String[] args) {
-        String projectDir = System.getProperty("user.dir");
-        System.out.println("user.dir（当前命令行所在目录）: " + projectDir);
-        String mylibsDir = projectDir + "/runLibs";
-        MyRuntime myRuntime = MyRuntime.getMyRuntime();
-        myRuntime.changeDir(mylibsDir + "/");
+        String runtimeDir = System.getProperty("user.dir");
+        System.out.println("user.dir（当前命令行所在目录）: " + runtimeDir);
+        String jarPath = System.getProperty("java.class.path");
+        if (!jarPath.endsWith(".jar")) {
+            jarPath = runtimeDir;
+        }
 
-//        String apkPath = projectDir + "/doc/test.apk";
-//        String outPath = projectDir + "/build/output";
+        //String path = System.getProperty("java.class.path");
+
+//        String apkPath = runtimeDir + "/doc/test.apk";
+//        String outPath = runtimeDir + "/build/output";
 //        boolean isLog = true;
 //        boolean isBuild = false;
 //        boolean isCount = false;
 
         MyJCommander jct = new MyJCommander(args);
-        String apkPath = jct.apkpath;
-        String outPath = jct.output;
+        String apkPath = jct.getApkPath();
+        String outPath = jct.getOutPath();
         boolean isLog = jct.debug;
         boolean isBuild = jct.build;
         boolean isCount = jct.count;
 
+        MyRuntime myRuntime = MyRuntime.getMyRuntime();
+        myRuntime.changeDir(jarPath + "/runLibs/");
         myRuntime.isLog = isLog;
         System.out.println("********************************************************");
         System.out.println("Processing...");

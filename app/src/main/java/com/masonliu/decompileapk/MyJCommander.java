@@ -12,48 +12,62 @@ public class MyJCommander {
 
     @Parameter
     public List<String> parameters = new ArrayList<String>();
-    public String output;
-    public String apkpath;
-    @Parameter(names = {"-debug", "-verbose"}, description = "Debug mode")
-    public boolean debug = false;
-    @Parameter(names = {"-help", "--help", "-h"}, help = true)
+    @Parameter(names = {"-v", "-debug", "-verbose"}, description = "Debug mode")
+    public boolean debug;
+    @Parameter(names = {"-h", "--h", "-help", "--help"}, description = "help")
     public boolean help;
     @Parameter(names = {"-b"}, description = "recreate apk")
     public boolean build;
     @Parameter(names = {"-c"}, description = "method counts")
     public boolean count;
+    @Parameter(names = {"-apk"}, description = "apk path")
+    private String apkPath;
+    @Parameter(names = {"-out"}, description = "out path")
+    private String outPath;
 
     public MyJCommander(String args[]) {
         JCommander jc = new JCommander(this, args);
         if (this.help) {
-
             StringBuffer sb = new StringBuffer();
             sb.append("\n");
             sb.append("********************************************************\n");
             sb.append("DecompileApk\n");
             sb.append("DecompileApk_v1 a tool for decompiling Android apk files\n");
-            sb.append("Copyright 2014 Mason Liu <masonliuchn@gmail.com\n");
+            sb.append("Copyright 2014 Mason Liu <masonliuchn@gmail.com>\n");
             sb.append("********************************************************\n");
-            sb.append("Usage: decompileapk <apk_path> <output_path>");
-            sb.append("Usage: decompileapk -b <apktool_output_path>");
-            sb.append("Usage: decompileapk -c <apk_path>");
             jc.setProgramName(sb.toString());
             jc.usage();
         }
 
-        if (parameters.size() > 0) {
-            apkpath = parameters.get(0);
-            apkpath = new File(apkpath).getAbsolutePath();
-        } else {
+//        if (parameters.size() > 0) {
+//            apkpath = parameters.get(0);
+//            apkpath = new File(apkpath).getAbsolutePath();
+//        } else {
+//            System.exit(0);
+//        }
+//
+//        if (parameters.size() > 1) {
+//            output = parameters.get(1);
+//        }
+//        if (StringUtil.isBlank(output)) {
+//            output = System.getProperty("user.dir");
+//        }
+//        output = new File(output).getAbsolutePath();
+    }
+
+    public String getApkPath() {
+        if (StringUtil.isBlank(apkPath)) {
             System.exit(0);
         }
+        //new File会自动拼接当前命令行目录
+        return new File(apkPath).getAbsolutePath();
+    }
 
-        if (parameters.size() > 1) {
-            output = parameters.get(1);
+    public String getOutPath() {
+        if (StringUtil.isBlank(outPath)) {
+            outPath = System.getProperty("user.dir");
         }
-        if (StringUtil.isBlank(output)) {
-            output = System.getProperty("user.dir");
-        }
-        output = new File(output).getAbsolutePath();
+        //new File会自动拼接当前命令行目录
+        return new File(outPath).getAbsolutePath();
     }
 }
