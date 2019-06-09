@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="#ffeeeeee" android:layout_width="fill_parent" android:layout_height="37.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/tabline" android:background="@drawable/tabline" android:layout_width="100.0dip" android:layout_height="3.0dip" />
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="34.0dip">
+        <LinearLayout android:gravity="center" android:id="@id/mLinearLayout" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0">
+            <TextView android:textColor="#ff6666ff" android:id="@id/tv1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="5.0dip" android:text="WIFI列表" />
+        </LinearLayout>
+        <LinearLayout android:gravity="center" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0">
+            <TextView android:textColor="#ff000000" android:id="@id/tv2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="字典编辑" />
+        </LinearLayout>
+        <LinearLayout android:gravity="center" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0">
+            <TextView android:textColor="#ff000000" android:id="@id/tv3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="破解记录" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

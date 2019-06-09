@@ -2,6 +2,8 @@
 
 download decompileapk.zip and unzip
 
+decompileapk.zip：https://github.com/MasonLiuChn/DecompileApk/blob/master/app/doc/decompileapk.zip
+
 ### Feature 1
 
 it can output dex,jar,smali,xml,AndroidManifest.xml,res,sign,version,packageName.

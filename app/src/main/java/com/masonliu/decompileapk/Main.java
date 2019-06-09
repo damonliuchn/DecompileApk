@@ -22,23 +22,23 @@ public class Main {
 
     public static void main(String[] args) {
         String projectDir = System.getProperty("user.dir");
-        System.out.println("user.dir: " + projectDir);
+        System.out.println("user.dir（当前命令行所在目录）: " + projectDir);
         String mylibsDir = projectDir + "/runLibs";
         MyRuntime myRuntime = MyRuntime.getMyRuntime();
         myRuntime.changeDir(mylibsDir + "/");
 
-        String apkPath = projectDir + "/doc/test.apk";
-        String outPath = projectDir + "/build/output";
-        boolean isLog = true;
-        boolean isBuild = false;
-        boolean isCount = false;
+//        String apkPath = projectDir + "/doc/test.apk";
+//        String outPath = projectDir + "/build/output";
+//        boolean isLog = true;
+//        boolean isBuild = false;
+//        boolean isCount = false;
 
-//        MyJCommander jct = new MyJCommander(args);
-//        String apkPath = jct.apkpath;
-//        String outPath = jct.output;
-//        boolean isLog = jct.debug;
-//        boolean isBuild = jct.build;
-//        boolean isCount = jct.count;
+        MyJCommander jct = new MyJCommander(args);
+        String apkPath = jct.apkpath;
+        String outPath = jct.output;
+        boolean isLog = jct.debug;
+        boolean isBuild = jct.build;
+        boolean isCount = jct.count;
 
         myRuntime.isLog = isLog;
         System.out.println("********************************************************");

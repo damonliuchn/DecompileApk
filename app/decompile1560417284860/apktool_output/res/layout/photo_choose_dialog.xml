@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="bottom" android:orientation="vertical" android:id="@id/mlayout" android:background="#00000000" android:padding="5.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <Button android:textSize="16.0sp" android:id="@id/help" android:background="@drawable/photo_gallery_selector" android:paddingTop="10.0dip" android:paddingBottom="10.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="帮助说明" />
+    <TextView android:background="#ffdad9db" android:layout_width="fill_parent" android:layout_height="0.5dip" />
+    <Button android:textSize="16.0sp" android:id="@id/tuichu" android:background="@drawable/photo_camera_selector" android:paddingTop="10.0dip" android:paddingBottom="10.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="退出软件" />
+    <Button android:textSize="16.0sp" android:id="@id/quxiao" android:background="@drawable/photo_cancel_selector" android:paddingTop="10.0dip" android:paddingBottom="10.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="取消" />
+</LinearLayout>

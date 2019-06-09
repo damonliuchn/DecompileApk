@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@drawable/top1_bg" android:layout_width="fill_parent" android:layout_height="40.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="fill_parent">
+        <TextView android:textSize="18.0sp" android:textColor="#ffd3d3d3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:text="幻影WIFI轻巧版 Beta2" />
+    </LinearLayout>
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_alignParentRight="true">
+        <ImageButton android:id="@id/startbt" android:background="@drawable/play" android:layout_width="30.0dip" android:layout_height="30.0dip" android:layout_marginRight="3.0dip" />
+        <ImageButton android:id="@id/refresh" android:background="@drawable/refresh" android:layout_width="30.0dip" android:layout_height="30.0dip" android:layout_marginRight="3.0dip" />
+    </LinearLayout>
+</RelativeLayout>

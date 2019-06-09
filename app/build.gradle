@@ -42,6 +42,7 @@ jar {
 }
 
 /** 执行jar包 ./gradlew runJar -PappArgs="['-u', 'myuser', 'some other argument', 'and/a/path']"
+ *  例如：./gradlew runJar -PappArgs="['doc/test.apk']"
  **/
 task runJar(type: Exec) {
     def myArgs = ["java", "-jar", "${project.buildDir}/libs/app.jar"]

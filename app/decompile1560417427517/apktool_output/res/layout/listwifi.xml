@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/relayout" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/wifiiconimageView1" android:layout_width="40.0dip" android:layout_height="40.0dip" android:src="@drawable/x2" android:layout_alignParentLeft="true" />
+    <TextView android:textSize="17.0sp" android:id="@id/wifinametextView" android:paddingTop="11.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="HuanyingWifi" android:layout_toRightOf="@id/wifiiconimageView1" />
+    <TextView android:textSize="18.0sp" android:id="@id/wifiinfotextView" android:paddingTop="9.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="4.0dip" android:text="（无需破解）" android:layout_alignParentRight="true" />
+</RelativeLayout>

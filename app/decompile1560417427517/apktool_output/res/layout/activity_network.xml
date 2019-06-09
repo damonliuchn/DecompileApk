@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center" android:orientation="vertical" android:background="#80000000" android:padding="20.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="18.0sp" android:background="#ffeeeeee" android:padding="10.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="幻影WIFI网络设置" />
+    <include layout="@layout/layout_line" />
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:background="#ffffffff" android:padding="15.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <TextView android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="请务必打开WIFI开关~" />
+        <LinearLayout android:gravity="center_horizontal" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:weightSum="2.0">
+            <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0">
+                <ImageView android:id="@id/img_wifi" android:background="@drawable/wuxian1" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                <com.zyx.huanyingwifiqqb.UISwitchButton android:id="@id/switch_wifi" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="10.0dip" switch:bmWidth="40.0dip" switch:bmHeight="50000.0dip" xmlns:switch="http://schemas.android.com/apk/res-auto" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Wifi" />
+            </LinearLayout>
+            <ImageView android:background="#ffc0c0c0" android:layout_width="0.5dip" android:layout_height="fill_parent" />
+            <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0">
+                <ImageView android:id="@id/img_gprs" android:background="@drawable/wuxianer" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                <com.zyx.huanyingwifiqqb.UISwitchButton android:id="@id/switch_liuliang" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="10.0dip" switch:bmWidth="40.0dip" switch:bmHeight="5000.0dip" xmlns:switch="http://schemas.android.com/apk/res-auto" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="移动数据" />
+            </LinearLayout>
+        </LinearLayout>
+        <Button android:gravity="center_horizontal" android:id="@id/but_close" android:background="@drawable/btn_filtrate_cancel" android:padding="10.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:layout_marginTop="10.0dip" android:layout_marginRight="20.0dip" android:text="关闭" />
+    </LinearLayout>
+</LinearLayout>

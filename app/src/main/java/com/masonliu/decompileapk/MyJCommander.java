@@ -16,7 +16,7 @@ public class MyJCommander {
     public String apkpath;
     @Parameter(names = {"-debug", "-verbose"}, description = "Debug mode")
     public boolean debug = false;
-    @Parameter(names = {"-help", "--help"}, help = true)
+    @Parameter(names = {"-help", "--help", "-h"}, help = true)
     public boolean help;
     @Parameter(names = {"-b"}, description = "recreate apk")
     public boolean build;

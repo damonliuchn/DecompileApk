@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_gravity="center" android:background="@drawable/tips_bg" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <View android:layout_width="100.0dip" android:layout_height="100.0dip" android:layout_centerInParent="true" />
+    <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true">
+        <ImageView android:gravity="center" android:layout_gravity="center" android:id="@id/tips_icon" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="10.0dip" />
+        <TextView android:textSize="17.0sp" android:textColor="#ffffffff" android:gravity="center" android:layout_gravity="center" android:id="@id/tips_msg" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxWidth="180.0dip" android:lineSpacingExtra="3.0dip" />
+    </LinearLayout>
+</RelativeLayout>
