@@ -22,7 +22,7 @@ public class MyJCommander {
     public boolean count;
     @Parameter(names = {"-apk"}, description = "apk path")
     private String apkPath;
-    @Parameter(names = {"-out"}, description = "out path")
+    @Parameter(names = {"-out"}, description = "out path or apktool_output_path")
     private String outPath;
 
     public MyJCommander(String args[]) {
@@ -32,7 +32,7 @@ public class MyJCommander {
             sb.append("\n");
             sb.append("********************************************************\n");
             sb.append("DecompileApk\n");
-            sb.append("DecompileApk_v1 a tool for decompiling Android apk files\n");
+            sb.append("DecompileApk_v2 a tool for decompiling Android apk files\n");
             sb.append("Copyright 2014 Mason Liu <masonliuchn@gmail.com>\n");
             sb.append("********************************************************\n");
             jc.setProgramName(sb.toString());

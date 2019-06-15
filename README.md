@@ -8,7 +8,7 @@ decompileapk.zip：https://github.com/MasonLiuChn/DecompileApk/blob/master/app/d
 
 it can output dex,jar,smali,xml,AndroidManifest.xml,res,sign,version,packageName.
 ```java
-java -jar decompileapk.jar xx.apk
+java -jar decompileapk.jar -apk xx.apk
 ```
 <img src="https://raw.githubusercontent.com/MasonLiuChn/DecompileApk/master/app/doc/1.png" width="50%" height="50%" />
 
@@ -17,12 +17,12 @@ java -jar decompileapk.jar xx.apk
 ### Feature 2
 recreate apk.
 ```java
-java -jar decompileapk.jar -b <apktool_output_path>
+java -jar decompileapk.jar -b -out <apktool_output_path>
 ```
 ### Feature 3
 output dex method counts.
 ```java
-java -jar decompileapk.jar -c xx.apk
+java -jar decompileapk.jar -c -apk xx.apk
 ```
 
 -----

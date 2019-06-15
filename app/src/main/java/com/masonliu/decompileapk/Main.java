@@ -23,13 +23,13 @@ public class Main {
     public static void main(String[] args) {
         String runtimeDir = System.getProperty("user.dir");
         System.out.println("user.dir（当前命令行所在目录）: " + runtimeDir);
-        String jarPath = "";
+        String jarParentPath = "";
         if (runInJar()) {
-            jarPath = System.getProperty("java.class.path");
+            jarParentPath = jarParentPath();
         } else {
-            jarPath = runtimeDir;
+            jarParentPath = runtimeDir;
         }
-        System.out.println("user.dir（当前class或jar所在目录）: " + jarPath);
+        System.out.println("user.dir（当前class或jar所在目录）: " + jarParentPath);
 
         String apkPath = runtimeDir + "/doc/test.apk";
         String outPath = runtimeDir + "/build/output";
@@ -47,13 +47,13 @@ public class Main {
         }
 
         MyRuntime myRuntime = MyRuntime.getMyRuntime();
-        myRuntime.changeDir(jarPath + "/runLibs/");
+        myRuntime.changeDir(jarParentPath + "/runLibs/");
         myRuntime.isLog = isLog;
         System.out.println("********************************************************");
         System.out.println("Processing...");
 
         if (isBuild) {
-            recreateApk(myRuntime, apkPath);
+            recreateApk(myRuntime, outPath);
         } else if (isCount) {
             countMethodApk(myRuntime, apkPath);
         } else {
@@ -114,5 +114,9 @@ public class Main {
 
     private static boolean runInJar() {
         return !System.getProperty("java.class.path").contains(";");
+    }
+
+    private static String jarParentPath() {
+        return new File(System.getProperty("java.class.path")).getParentFile().getAbsolutePath();
     }
 }
