@@ -23,25 +23,28 @@ public class Main {
     public static void main(String[] args) {
         String runtimeDir = System.getProperty("user.dir");
         System.out.println("user.dir（当前命令行所在目录）: " + runtimeDir);
-        String jarPath = System.getProperty("java.class.path");
-        if (!jarPath.endsWith(".jar")) {
+        String jarPath = "";
+        if (runInJar()) {
+            jarPath = System.getProperty("java.class.path");
+        } else {
             jarPath = runtimeDir;
         }
+        System.out.println("user.dir（当前class或jar所在目录）: " + jarPath);
 
-        //String path = System.getProperty("java.class.path");
+        String apkPath = runtimeDir + "/doc/test.apk";
+        String outPath = runtimeDir + "/build/output";
+        boolean isLog = true;
+        boolean isBuild = false;
+        boolean isCount = false;
 
-//        String apkPath = runtimeDir + "/doc/test.apk";
-//        String outPath = runtimeDir + "/build/output";
-//        boolean isLog = true;
-//        boolean isBuild = false;
-//        boolean isCount = false;
-
-        MyJCommander jct = new MyJCommander(args);
-        String apkPath = jct.getApkPath();
-        String outPath = jct.getOutPath();
-        boolean isLog = jct.debug;
-        boolean isBuild = jct.build;
-        boolean isCount = jct.count;
+        if (runInJar()) {
+            MyJCommander jct = new MyJCommander(args);
+            apkPath = jct.getApkPath();
+            outPath = jct.getOutPath();
+            isLog = jct.debug;
+            isBuild = jct.build;
+            isCount = jct.count;
+        }
 
         MyRuntime myRuntime = MyRuntime.getMyRuntime();
         myRuntime.changeDir(jarPath + "/runLibs/");
@@ -107,5 +110,9 @@ public class Main {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    private static boolean runInJar() {
+        return !System.getProperty("java.class.path").contains(";");
     }
 }
